@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Swipe E-Invoice Design System - Modern SaaS Aesthetic */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 40% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 3.9%;
+
+    /* Swipe Brand Blue */
+    --primary: 238 79% 61%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 238 79% 55%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 210 40% 3.9%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 94%;
+    --accent-foreground: 210 40% 3.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 238 79% 61%;
+
+    --radius: 0.75rem;
+
+    /* Trust indicator colors */
+    --success: 142 76% 36%;
+    --success-foreground: 355 100% 97%;
+
+    /* Gradients for modern SaaS feel */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(238 79% 55%));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(210 40% 98%));
+
+    /* Shadows for depth */
+    --shadow-elegant: 0 10px 30px -10px hsl(238 79% 61% / 0.1);
+    --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
+
+    /* Animation transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Sidebar variables for light mode */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 40% 3.9%;
+    --sidebar-primary: 238 79% 61%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96.1%;
+    --sidebar-accent-foreground: 210 40% 3.9%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 238 79% 61%;
+  }
+
+  .dark {
+    --background: 210 40% 3.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 210 40% 3.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 210 40% 3.9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Swipe Brand Blue - slightly adjusted for dark mode */
+    --primary: 238 79% 61%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 238 79% 65%;
+
+    --secondary: 210 40% 9%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 9%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 210 40% 9%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 40% 9%;
+    --input: 210 40% 9%;
+    --ring: 238 79% 61%;
+
+    /* Trust indicator colors for dark mode */
+    --success: 142 76% 46%;
+    --success-foreground: 355 100% 97%;
+
+    /* Gradients for dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(238 79% 65%));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(210 40% 6%));
+
+    /* Shadows for dark mode */
+    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.3), 0 2px 4px -1px hsl(0 0% 0% / 0.2);
+
+    /* Sidebar variables for dark mode */
+    --sidebar-background: 210 40% 3.9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 238 79% 61%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 9%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 210 40% 9%;
+    --sidebar-ring: 238 79% 61%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Dark mode specific styles */
+  .dark {
+    color-scheme: dark;
+  }
+
+  /* Ensure smooth transitions for theme changes */
+  * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Dark mode scrollbar */
+  .dark ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground));
+    border-radius: 4px;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent-foreground));
+  }
+}
